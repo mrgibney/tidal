@@ -68,7 +68,7 @@ function draw() {
   translate(width / 2, height / 2);
   stroke(255);
   beginShape();
-  radius = myW/2;
+  radius = myW/4;
   Jcounter = JSONlength - counter;
   counter++;
   for (let i = 0; i < JSONlength; i++) {
