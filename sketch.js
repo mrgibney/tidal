@@ -7,11 +7,15 @@ let radius = 100;
 let counter = 0;
 let tide = [];
 let JSONlength;
+let myW = 0;
+let myH = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight); // Make the canvas responsive
   background(125);
   print("INTO SET_UP");
+  myW =windowWidth;
+  myH = windowHeight;
 }
 
 function gotData(data) {
@@ -52,8 +56,8 @@ function draw() {
         maxY = y;
         print(y);
       }
-      mapX = map(x, 0, JSONlength, 0, 1440) * 2;
-      mapY = map(y, 0, 6, 0, 600) * 2;
+      mapX = map(x, 0, JSONlength, 0, 1440) ;
+      mapY = map(y, 0, 6, 0, 600) ;
       // vertex(mapX,mapY)
     }
     endShape();
@@ -64,7 +68,7 @@ function draw() {
   translate(width / 2, height / 2);
   stroke(255);
   beginShape();
-  radius = 200;
+  radius = myW/2;
   Jcounter = JSONlength - counter;
   counter++;
   for (let i = 0; i < JSONlength; i++) {
@@ -76,8 +80,8 @@ function draw() {
     Ny = tide.table.rows[i][2];
     offY = Ny - new0;
     const ThisRadius = radius + offY * 20;
-    const x = cos(radians(i * 360 / JSONlength)) * ThisRadius * 2;
-    const y = sin(radians(i * 360 / JSONlength)) * ThisRadius * 2;
+    const x = cos(radians(i * 360 / JSONlength)) * ThisRadius ;
+    const y = sin(radians(i * 360 / JSONlength)) * ThisRadius ;
     vertex(x, y);
   }
   endShape();
