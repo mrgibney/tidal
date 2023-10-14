@@ -31,7 +31,7 @@ function gotData(data) {
 }
 
 function draw() {
-  background(0, 0, 255);
+  background(0, 255, 255);
   smooth();
 
   if (myTimer != minute()) {
