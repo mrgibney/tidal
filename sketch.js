@@ -9,7 +9,7 @@ let counter = 0
 // let tide = []
 let JSONlength
 function setup() {
-	createCanvas(1200,1200)
+	createCanvas(windowWidth,windowHeight)
 	background(125)
 	print("INTO SET_UP")
 }
